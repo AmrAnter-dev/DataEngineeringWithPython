@@ -1,7 +1,8 @@
 ALTER AUTHORIZATION
 ON DATABASE::AdventureWorks2008R2
-TO [YourLogin];
+TO AmrDBA;
 
+EXEC sys.sp_cdc_enable_db;
 
 CREATE TABLE dbo.dw_table_config(
 schemaName		SYSNAME NOT NULL,
@@ -17,41 +18,45 @@ CONSTRAINT PK_dw_table_config
 GO
 
 
-
-
-
-
-
-
-
-
 CREATE OR ALTER PROC dbo.usp_loadDatabaseTables
 AS
 BEGIN
-	SET NOCOUNT ON;
-	
-	INSERT INTO dbo.dw_table_config
-	(	schemaName,
-		tableName 
-	)
-		
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
-	SELECT 
-	s.name AS schemaName,
-	t.name AS tableName
-	FROM sys.tables t
-	JOIN sys.schemas s
-	ON s.schema_id=t.schema_id
-	WHERE t.is_ms_shipped = 0
-	AND NOT EXISTS(
-		SELECT 1 FROM dbo.dw_table_config c
-		WHERE s.name=c.schemaName
-		AND t.name=c.tableName
-		)
-		ORDER BY s.name,t.name
+    BEGIN TRY
 
-	;
-END
+        INSERT INTO dbo.dw_table_config
+        (
+            schemaName,
+            tableName
+        )
+        SELECT
+            s.name,
+            t.name
+        FROM sys.tables AS t
+        INNER JOIN sys.schemas AS s
+            ON s.schema_id = t.schema_id
+        WHERE t.is_ms_shipped = 0
+          AND NOT EXISTS
+          (
+              SELECT 1
+              FROM dbo.dw_table_config AS c
+              WHERE c.schemaName = s.name
+                AND c.tableName  = t.name
+          );
+
+        DECLARE @RowsInserted INT = @@ROWCOUNT;
+
+        PRINT CONCAT('Inserted ', @RowsInserted, ' table(s).');
+
+    END TRY
+    BEGIN CATCH
+
+        THROW;
+
+    END CATCH
+END;
 GO
 
 
