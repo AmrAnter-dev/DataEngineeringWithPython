@@ -18,6 +18,14 @@ CONSTRAINT PK_dw_table_config
 GO
 
 
+
+
+
+
+
+
+
+
 CREATE OR ALTER PROC dbo.usp_loadDatabaseTables
 AS
 BEGIN
@@ -59,12 +67,12 @@ BEGIN
 END;
 GO
 
-
-
 CREATE OR ALTER PROC dbo.usp_enable_cdc
 AS
 BEGIN
 	SET NOCOUNT ON;
+	SET XACT_ABORT ON;
+
 	DECLARE @schemaName SYSNAME,
 			@tableName SYSNAME
 			
@@ -112,7 +120,8 @@ BEGIN
 
 				UPDATE c
 					SET c.status = 'ENABLED',
-						c.updated_at=SYSDATETIME()
+						c.updated_at=SYSDATETIME(),
+						c.error_message= NULL
 					FROM dbo.dw_table_config c
 					WHERE C.schemaName=@schemaName
 						AND C.tableName=@tableName;
@@ -137,5 +146,38 @@ DEALLOCATE cur;
 END
 GO
 
+EXEC dbo.usp_loadDatabaseTables;
+GO
 
+EXEC dbo.usp_enable_cdc;
+GO
+
+ALTER TABLE dbo.dw_table_config
+ADD mergeColumn NVARCHAR(50)  NULL;
+
+GO;
+
+WITH sc AS
+(
+    SELECT
+        KCU.TABLE_SCHEMA,
+        KCU.TABLE_NAME,
+        STRING_AGG(KCU.COLUMN_NAME, ',') 
+            WITHIN GROUP (ORDER BY KCU.ORDINAL_POSITION) AS mergeColumn
+    FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KCU
+    INNER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC
+        ON KCU.CONSTRAINT_NAME = TC.CONSTRAINT_NAME
+       AND KCU.TABLE_SCHEMA = TC.TABLE_SCHEMA
+       AND KCU.TABLE_NAME = TC.TABLE_NAME
+    WHERE TC.CONSTRAINT_TYPE = 'PRIMARY KEY'
+    GROUP BY
+        KCU.TABLE_SCHEMA,
+        KCU.TABLE_NAME
+)
+UPDATE cfg
+SET cfg.mergeColumn = sc.mergeColumn
+FROM dbo.dw_table_config AS cfg
+INNER JOIN sc
+    ON sc.TABLE_SCHEMA = cfg.schemaName
+   AND sc.TABLE_NAME = cfg.tableName;
 
