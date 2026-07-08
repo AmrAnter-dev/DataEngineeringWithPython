@@ -1,8 +1,9 @@
 def merge_batch(
-        spark,
-        batch_df,
-        target_path,
-        merge_column):
+    spark: SparkSession,
+    batch_df: DataFrame,
+    target_path: str,
+    merge_column: str
+) -> None:
 
     if not DeltaTable.isDeltaTable(spark, target_path):
 
