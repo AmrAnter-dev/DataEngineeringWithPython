@@ -1,5 +1,6 @@
 import json
 from utils.spark_utils import SparkManager
+from utils.cdc_processor import CDCProcessor
 from pyspark.sql.functions import *
 from delta.tables import DeltaTable
 spark=SparkManager('pipeline')
@@ -56,13 +57,7 @@ for table_name, cfg in configs.items():
         )
     )
 
-    silver_df = (
-        parsed_df
-        .select(
-            'parsed_data.after.*',
-            'parsed_data.op'
-        )
-    )
+    silver_df = CDCProcessor.transform(parsed_df)
 
    
   query = (
