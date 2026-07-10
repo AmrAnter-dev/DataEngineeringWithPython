@@ -10,7 +10,7 @@ try:
     SELECT STRING_AGG(schemaName + '.' + tableName, ',')
     FROM dbo.dw_table_config
     WHERE status = 'ENABLED'
-    AND schemaName='person';
+    ;
     """
 
     cursor.execute(query)
