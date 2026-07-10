@@ -10,7 +10,7 @@ try:
     
     kafka_opt={
     'kafka.bootstrap.servers':'localhost:9092',
-    'subscribePattern':'dw.AdventureWorks2008R2.Person.*',
+    'subscribePattern':'dw.*',
     'startingOffsets':'earliest',
     'failOnDataLoss':'false',
     'kafka.consumer.config.default.api.timeout.ms':'300000',
