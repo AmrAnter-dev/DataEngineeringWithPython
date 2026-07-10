@@ -1,57 +1,40 @@
-import pyodbc
+import os
 import requests
-
-conn = pyodbc.connect(
-    "DRIVER={ODBC Driver 18 for SQL Server};"
-    "SERVER=localhost;"
-    "DATABASE=MyDatabase;"
-    "UID=sa;"
-    "PWD=YourPassword;"
-    "TrustServerCertificate=yes;"
-)
-
-cursor = conn.cursor()
-
-query = """
-SELECT STRING_AGG(schemaName + '.' + tableName, ',')
-FROM dbo.dw_table_config
-WHERE status = 'ENABLED';
-"""
-
-cursor.execute(query)
-
-row = cursor.fetchone()
-table_list = row[0] if row else ""
-
-cursor.close()
-conn.close()
-
-deb_url = "http://localhost:8083/connectors/sqlserver-connector/config"
-
-headers = {
-    "Content-Type": "application/json"
-}
-
-body = {
-    "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
-    "database.hostname": "...",
-    "database.port": "1433",
-    "database.user": "...",
-    "database.password": "...",
-    "database.names": "...",
-    "topic.prefix": "...",
-    "table.include.list": table_list
-}
-
-res = requests.put(
-    deb_url,
-    json=body,
-    headers=headers
-)
-
-if res.status_code != 200:
-    raise Exception(
-        f"Request failed ({res.status_code}): {res.text}"
+def update_deb_connector(table_list):
+    username = os.getenv("SRVADMIN")
+    password = os.getenv("MSSQL_PWD")
+    deb_url = "http://localhost:8083/connectors"
+    headers = {
+        "Content-Type": "application/json"
+    }
+    body ={
+        
+        "name": "sqlserver-connector",
+        "config": {
+             
+            "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+            "tasks.max": "1",
+            "database.hostname": "192.168.1.7",
+            "database.port": "1433",
+            "database.user":username,
+            "database.password":password,
+            "database.names": "AdventureWorks2008R2",
+            "database.encrypt": "true",
+            "database.trustServerCertificate": "true",
+            "topic.prefix": "dw",
+            "table.include.list": table_list,
+            "snapshot.mode": "initial",
+            "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+            "schema.history.internal.kafka.topic": "schemahistory.datawarehouse",
+            "key.converter":"org.apache.kafka.connect.json.JsonConverter",
+            "key.converter.schemas.enable":"false",
+            "value.converter":"org.apache.kafka.connect.json.JsonConverter",
+            "value.converter.schemas.enable":"false"
+        }
+    }
+    return requests.post(
+        deb_url,
+        json=body,
+        headers=headers,
+        timeout=300
     )
-
-print("Connector updated successfully.")
