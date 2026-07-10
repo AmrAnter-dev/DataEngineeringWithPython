@@ -1,5 +1,8 @@
 import os
 import requests
+
+
+
 def update_deb_connector(table_list):
     username = os.getenv("SRVADMIN")
     password = os.getenv("MSSQL_PWD")
