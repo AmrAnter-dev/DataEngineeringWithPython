@@ -1,0 +1,610 @@
+{
+    "dw.AdventureWorks2008R2.dbo.AWBuildVersion": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:03.960297",
+        "mergeColumn": [
+            "SystemInformationID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.dbo.DatabaseLog": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:04.594856",
+        "mergeColumn": [
+            "DatabaseLogID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.dbo.dw_table_config": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:04.973381",
+        "mergeColumn": [
+            "schemaName",
+            "tableName"
+        ]
+    },
+    "dw.AdventureWorks2008R2.dbo.ErrorLog": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:05.357984",
+        "mergeColumn": [
+            "ErrorLogID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.Department": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:05.653608",
+        "mergeColumn": [
+            "DepartmentID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.Employee": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:06.180859",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.EmployeeDepartmentHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:06.545043",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "StartDate",
+            "DepartmentID",
+            "ShiftID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.EmployeePayHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:06.919990",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "RateChangeDate"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.JobCandidate": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:07.330366",
+        "mergeColumn": [
+            "JobCandidateID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.HumanResources.Shift": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:07.565367",
+        "mergeColumn": [
+            "ShiftID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.Address": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:07.910923",
+        "mergeColumn": [
+            "AddressID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.AddressType": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:08.172402",
+        "mergeColumn": [
+            "AddressTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.BusinessEntity": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:08.419586",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.BusinessEntityAddress": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:08.727069",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "AddressID",
+            "AddressTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.BusinessEntityContact": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:09.093056",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "PersonID",
+            "ContactTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.ContactType": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:09.539204",
+        "mergeColumn": [
+            "ContactTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.CountryRegion": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:09.754215",
+        "mergeColumn": [
+            "CountryRegionCode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.EmailAddress": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:10.046868",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "EmailAddressID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.Password": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:10.279280",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.Person": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:10.810219",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.PersonPhone": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:11.054562",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "PhoneNumber",
+            "PhoneNumberTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.PhoneNumberType": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:11.420635",
+        "mergeColumn": [
+            "PhoneNumberTypeID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Person.StateProvince": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:12.146691",
+        "mergeColumn": [
+            "StateProvinceID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.BillOfMaterials": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:13.178860",
+        "mergeColumn": [
+            "BillOfMaterialsID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.Culture": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:13.845862",
+        "mergeColumn": [
+            "CultureID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.Document": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:14.668066",
+        "mergeColumn": [
+            "DocumentNode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.Illustration": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:15.364067",
+        "mergeColumn": [
+            "IllustrationID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.Location": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:16.022083",
+        "mergeColumn": [
+            "LocationID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.Product": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:16.360402",
+        "mergeColumn": [
+            "ProductID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductCategory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:16.603292",
+        "mergeColumn": [
+            "ProductCategoryID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductCostHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:16.776292",
+        "mergeColumn": [
+            "ProductID",
+            "StartDate"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductDescription": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:17.122465",
+        "mergeColumn": [
+            "ProductDescriptionID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductDocument": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:17.376460",
+        "mergeColumn": [
+            "ProductID",
+            "DocumentNode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductInventory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:17.641093",
+        "mergeColumn": [
+            "ProductID",
+            "LocationID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductListPriceHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:17.929184",
+        "mergeColumn": [
+            "ProductID",
+            "StartDate"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductModel": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:18.112157",
+        "mergeColumn": [
+            "ProductModelID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductModelIllustration": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:18.306157",
+        "mergeColumn": [
+            "ProductModelID",
+            "IllustrationID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductModelProductDescriptionCulture": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:18.483158",
+        "mergeColumn": [
+            "ProductModelID",
+            "ProductDescriptionID",
+            "CultureID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductPhoto": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:18.779160",
+        "mergeColumn": [
+            "ProductPhotoID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductProductPhoto": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:18.962158",
+        "mergeColumn": [
+            "ProductID",
+            "ProductPhotoID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductReview": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:19.162158",
+        "mergeColumn": [
+            "ProductReviewID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ProductSubcategory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:19.389157",
+        "mergeColumn": [
+            "ProductSubcategoryID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.ScrapReason": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:19.673179",
+        "mergeColumn": [
+            "ScrapReasonID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.TransactionHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:19.852158",
+        "mergeColumn": [
+            "TransactionID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.TransactionHistoryArchive": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:20.032157",
+        "mergeColumn": [
+            "TransactionID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.UnitMeasure": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:20.210157",
+        "mergeColumn": [
+            "UnitMeasureCode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.WorkOrder": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:20.462158",
+        "mergeColumn": [
+            "WorkOrderID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Production.WorkOrderRouting": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:20.639157",
+        "mergeColumn": [
+            "WorkOrderID",
+            "ProductID",
+            "OperationSequence"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Purchasing.ProductVendor": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:20.845159",
+        "mergeColumn": [
+            "ProductID",
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Purchasing.PurchaseOrderDetail": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:21.034157",
+        "mergeColumn": [
+            "PurchaseOrderID",
+            "PurchaseOrderDetailID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Purchasing.PurchaseOrderHeader": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:21.210158",
+        "mergeColumn": [
+            "PurchaseOrderID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Purchasing.ShipMethod": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:21.474158",
+        "mergeColumn": [
+            "ShipMethodID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Purchasing.Vendor": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:21.750166",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.CountryRegionCurrency": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:22.004155",
+        "mergeColumn": [
+            "CountryRegionCode",
+            "CurrencyCode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.CreditCard": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:22.184158",
+        "mergeColumn": [
+            "CreditCardID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.Currency": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:22.376158",
+        "mergeColumn": [
+            "CurrencyCode"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.CurrencyRate": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:22.693414",
+        "mergeColumn": [
+            "CurrencyRateID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.Customer": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:22.874414",
+        "mergeColumn": [
+            "CustomerID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.PersonCreditCard": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:23.075414",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "CreditCardID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesOrderDetail": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:23.274430",
+        "mergeColumn": [
+            "SalesOrderID",
+            "SalesOrderDetailID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesOrderHeader": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:23.714413",
+        "mergeColumn": [
+            "SalesOrderID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesOrderHeaderSalesReason": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:23.929436",
+        "mergeColumn": [
+            "SalesOrderID",
+            "SalesReasonID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesPerson": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:24.236417",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesPersonQuotaHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:24.425424",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "QuotaDate"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesReason": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:24.604414",
+        "mergeColumn": [
+            "SalesReasonID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesTaxRate": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:24.800414",
+        "mergeColumn": [
+            "SalesTaxRateID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesTerritory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:25.025414",
+        "mergeColumn": [
+            "TerritoryID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SalesTerritoryHistory": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:25.217414",
+        "mergeColumn": [
+            "BusinessEntityID",
+            "StartDate",
+            "TerritoryID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.ShoppingCartItem": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:25.428414",
+        "mergeColumn": [
+            "ShoppingCartItemID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SpecialOffer": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:25.730414",
+        "mergeColumn": [
+            "SpecialOfferID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.SpecialOfferProduct": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:25.947437",
+        "mergeColumn": [
+            "SpecialOfferID",
+            "ProductID"
+        ]
+    },
+    "dw.AdventureWorks2008R2.Sales.Store": {
+        "enable_CDC": true,
+        "status": "ENABLED",
+        "updated_at": "2026-07-02 01:54:26.143414",
+        "mergeColumn": [
+            "BusinessEntityID"
+        ]
+    }
+}
